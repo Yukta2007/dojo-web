@@ -1,0 +1,599 @@
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: var(--black);
+
+  color: var(--cream);
+}
+
+
+/* =========================================================
+   OUTER BACKGROUND
+========================================================= */
+
+.outerBackground {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 20, 13, 0.88),
+      rgba(37, 42, 23, 0.42),
+      rgba(17, 20, 13, 0.9)
+    ),
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2200&q=90")
+    center / cover no-repeat;
+
+  transform: scale(1.06);
+
+  filter:
+    saturate(0.55)
+    contrast(0.95);
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   MAIN FRAME
+========================================================= */
+
+.frame {
+  position: relative;
+
+  z-index: 1;
+
+  width: calc(100% - 9vw);
+
+  min-height:
+    calc(100svh - 8vw);
+
+  margin: 4vw auto;
+
+  background: var(--black);
+
+  border:
+    1px solid rgba(217, 222, 194, 0.14);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topBar {
+  height: 62px;
+
+  padding: 0 42px;
+
+  border-bottom:
+    1px solid rgba(217, 222, 194, 0.18);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.logo {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  letter-spacing: 0.02em;
+
+  color: var(--cream);
+}
+
+
+.established {
+  margin-left: auto;
+
+  margin-right: 80px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+
+  color: var(--sage);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+  width: 28px;
+
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+
+.menu span {
+  display: block;
+
+  width: 20px;
+
+  height: 1px;
+
+  background: var(--cream);
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.menu:hover span:first-child {
+  width: 14px;
+
+  background: var(--sap-green);
+}
+
+
+.menu:hover span:last-child {
+  width: 20px;
+
+  background: var(--sap-green);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.content {
+  position: relative;
+
+  min-height:
+    calc(100svh - 125px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   LEFT INFORMATION
+========================================================= */
+
+.leftInfo {
+  position: absolute;
+
+  top: 70px;
+
+  left: 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  z-index: 2;
+}
+
+
+.japanese {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(35px, 4vw, 60px);
+
+  line-height: 1;
+
+  color: var(--light-sage);
+}
+
+
+.label {
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: var(--sap-green);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.imageWrapper {
+  position: relative;
+
+  width: min(42vw, 570px);
+
+  height: min(62vh, 650px);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  border:
+    1px solid rgba(217, 222, 194, 0.12);
+}
+
+
+.imageWrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 20, 13, 0.05),
+      rgba(17, 20, 13, 0.3)
+    );
+
+  mix-blend-mode: multiply;
+}
+
+
+.image {
+  object-fit: cover;
+
+  filter:
+    saturate(0.55)
+    contrast(1.05);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 1.2s ease;
+}
+
+
+.imageWrapper:hover .image {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.counter {
+  position: absolute;
+
+  top: 70px;
+
+  right: 50px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  color: var(--light-sage);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 55px;
+
+  width: min(42vw, 570px);
+
+  transform: translateX(-50%);
+
+  opacity: 0;
+
+  z-index: 3;
+}
+
+
+.title h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(38px, 4vw, 65px);
+
+  font-weight: 400;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.05em;
+
+  color: var(--cream);
+}
+
+
+.title h1::first-line {
+  color: var(--light-sage);
+}
+
+
+.title p {
+  margin-top: 18px;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.1em;
+
+  color:
+    rgba(217, 222, 194, 0.55);
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.bottomBar {
+  position: absolute;
+
+  left: 42px;
+
+  right: 42px;
+
+  bottom: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 8px;
+
+  letter-spacing: 0.13em;
+
+  color: var(--sage);
+}
+
+
+.scroll {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--cream);
+}
+
+
+.scrollLine {
+  width: 50px;
+
+  height: 1px;
+
+  background: var(--sap-green);
+
+  transform-origin: left;
+
+  animation:
+    scrollLine 2s ease-in-out infinite;
+}
+
+
+@keyframes scrollLine {
+
+  0% {
+    transform: scaleX(0.35);
+  }
+
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0.35);
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP ACCENT
+========================================================= */
+
+.frame::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 3px;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      var(--sap-green),
+      transparent
+    );
+
+  opacity: 0.6;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+
+  .frame {
+    width:
+      calc(100% - 24px);
+
+    min-height:
+      calc(100svh - 24px);
+
+    margin: 12px auto;
+  }
+
+
+  .topBar {
+    height: 56px;
+
+    padding: 0 20px;
+  }
+
+
+  .logo {
+    font-size: 12px;
+  }
+
+
+  .established {
+    margin-right: 25px;
+
+    font-size: 8px;
+  }
+
+
+  .content {
+    min-height:
+      calc(100svh - 105px);
+  }
+
+
+  .leftInfo {
+    left: 20px;
+
+    top: 35px;
+
+    gap: 10px;
+  }
+
+
+  .japanese {
+    font-size: 34px;
+  }
+
+
+  .label {
+    font-size: 7px;
+  }
+
+
+  .counter {
+    right: 20px;
+
+    top: 35px;
+
+    font-size: 20px;
+  }
+
+
+  .imageWrapper {
+    width: 78vw;
+
+    height: 58vh;
+  }
+
+
+  .title {
+    width: 78vw;
+
+    bottom: 70px;
+  }
+
+
+  .title h1 {
+    font-size: 12vw;
+  }
+
+
+  .title p {
+    font-size: 7px;
+  }
+
+
+  .bottomBar {
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 18px;
+  }
+
+
+  .bottomBar > span {
+    display: none;
+  }
+
+
+  .scroll {
+    margin: auto;
+  }
+
+}

@@ -1,0 +1,403 @@
+/* =========================================================
+   BELT JOURNEY
+========================================================= */
+
+.section {
+  background: var(--cream);
+
+  color: var(--black);
+
+  padding: 150px 7vw 200px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid rgba(17, 20, 13, 0.25);
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+
+  color: var(--olive);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title {
+  margin: 150px 0 180px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+}
+
+
+.title > span {
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+
+  color: var(--olive);
+}
+
+
+.title h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(55px, 8vw, 125px);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+
+  color: var(--black);
+}
+
+
+/* =========================================================
+   BELTS
+========================================================= */
+
+.belts {
+  width: min(1100px, 100%);
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   INDIVIDUAL BELT
+========================================================= */
+
+.belt {
+  min-height: 150px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px 280px 1fr;
+
+  align-items: center;
+
+  border-top:
+    1px solid rgba(17, 20, 13, 0.18);
+
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease;
+}
+
+
+.belt:last-child {
+  border-bottom:
+    1px solid rgba(17, 20, 13, 0.18);
+}
+
+
+.belt:hover {
+  background:
+    rgba(89, 107, 50, 0.07);
+
+  padding-left: 15px;
+
+  padding-right: 15px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.number {
+  font-size: 9px;
+
+  letter-spacing: 0.1em;
+
+  color: var(--olive);
+}
+
+
+/* =========================================================
+   BELT INFORMATION
+========================================================= */
+
+.info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.kanji {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+
+  color: var(--olive);
+}
+
+
+.info h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 35px;
+
+  font-weight: 400;
+
+  color: var(--black);
+}
+
+
+.info p {
+  margin: 6px 0 0;
+
+  font-size: 8px;
+
+  letter-spacing: 0.13em;
+
+  color: var(--olive);
+}
+
+
+/* =========================================================
+   BELT TRACK
+========================================================= */
+
+.track {
+  height: 20px;
+
+  background:
+    rgba(17, 20, 13, 0.08);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+.track::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid rgba(17, 20, 13, 0.12);
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+.bar {
+  width: 100%;
+
+  height: 100%;
+
+  transform-origin: left;
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+/* =========================================================
+   BELT COLORS
+   Kept recognizable but slightly muted
+========================================================= */
+
+.white {
+  background: #eeeee4;
+
+  border:
+    1px solid #aaaF9c;
+}
+
+
+.yellow {
+  background: #a6a63b;
+}
+
+
+.orange {
+  background: #a86c38;
+}
+
+
+.green {
+  background: #596b32;
+}
+
+
+.blue {
+  background: #536b68;
+}
+
+
+.purple {
+  background: #665b6c;
+}
+
+
+.brown {
+  background: #594535;
+}
+
+
+.black {
+  background: #11140d;
+}
+
+
+/* =========================================================
+   SAP GREEN ACCENT
+========================================================= */
+
+.belt:nth-child(4) .bar {
+  box-shadow:
+    0 0 20px rgba(124, 143, 61, 0.3);
+}
+
+
+.belt:nth-child(8) .bar {
+  box-shadow:
+    0 0 25px rgba(17, 20, 13, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding:
+      100px 24px 140px;
+  }
+
+
+  .header {
+    font-size: 8px;
+  }
+
+
+  .title {
+    display: block;
+
+    margin: 100px 0;
+  }
+
+
+  .title > span {
+    display: block;
+
+    margin-bottom: 35px;
+  }
+
+
+  .title h2 {
+    margin-top: 50px;
+
+    font-size: 18vw;
+  }
+
+
+  .belt {
+    min-height: 130px;
+
+    grid-template-columns:
+      35px 1fr;
+
+    grid-template-rows:
+      auto auto;
+
+    padding: 20px 0;
+  }
+
+
+  .belt:hover {
+    padding-left: 5px;
+
+    padding-right: 5px;
+  }
+
+
+  .number {
+    align-self: start;
+
+    padding-top: 8px;
+  }
+
+
+  .info {
+    gap: 18px;
+  }
+
+
+  .kanji {
+    font-size: 28px;
+  }
+
+
+  .info h3 {
+    font-size: 25px;
+  }
+
+
+  .info p {
+    font-size: 7px;
+  }
+
+
+  .track {
+    grid-column: 2;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    height: 16px;
+  }
+
+}

@@ -1,0 +1,239 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 34, 22, 0.96) 0%,
+      rgba(35, 55, 34, 0.82) 45%,
+      rgba(70, 88, 60, 0.55) 100%
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  color: #eee7d9;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid rgba(232, 225, 213, 0.15);
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+========================================================= */
+
+.footerMain {
+  width:
+    min(1250px, calc(100% - 14vw));
+
+  margin: 0 auto;
+
+  padding: 110px 0 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 1fr;
+
+  gap: 60px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footerBrand h2 {
+  margin: 0;
+
+  color: #f1eadc;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(42px, 5vw, 76px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+}
+
+
+.footerBrand p {
+  max-width: 300px;
+
+  margin-top: 25px;
+
+  color: rgba(238, 231, 217, 0.68);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footerColumn {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.footerColumn span {
+  margin-bottom: 22px;
+
+  color: #d2a13a;
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+.footerColumn a {
+  width: fit-content;
+
+  margin-bottom: 13px;
+
+  color: #eee7d9;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footerColumn a:hover {
+  color: #d6ac4c;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER LINE
+========================================================= */
+
+.footerBottom {
+  width:
+    min(1250px, calc(100% - 14vw));
+
+  margin: 0 auto;
+
+  padding: 20px 0 25px;
+
+  border-top:
+    1px solid rgba(238, 231, 217, 0.2);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.footerBottom span {
+  color: rgba(238, 231, 217, 0.55);
+
+  font-size: 8px;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SAFFRON ACCENT
+========================================================= */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 8%;
+
+  width: 1px;
+  height: 120px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(210, 161, 58, 0.8),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .footerMain {
+    width:
+      calc(100% - 48px);
+
+    padding: 80px 0 60px;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px 30px;
+  }
+
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+
+
+  .footerBrand h2 {
+    font-size: 48px;
+  }
+
+
+  .footerBottom {
+    width:
+      calc(100% - 48px);
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}

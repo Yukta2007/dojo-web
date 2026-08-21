@@ -1,0 +1,333 @@
+/* =========================================================
+   FEATURED VIDEO
+========================================================= */
+
+.section {
+  position: relative;
+
+  background: var(--black);
+
+  color: var(--cream);
+
+  padding: 150px 7vw 180px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid rgba(217, 222, 194, 0.2);
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+
+  color: var(--sage);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+  margin-top: 140px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  display: grid;
+
+  grid-template-columns:
+    1fr 2fr 1fr;
+
+  gap: 30px;
+
+  align-items: start;
+}
+
+
+/* GOJU RYU */
+
+.heading > span {
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+
+  color: var(--sap-green);
+}
+
+
+/* MAIN TITLE */
+
+.heading h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(60px, 8vw, 120px);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+
+  color: var(--light-sage);
+}
+
+
+/* DESCRIPTION */
+
+.heading p {
+  margin: 0;
+
+  color:
+    rgba(217, 222, 194, 0.55);
+
+  font-size: 10px;
+
+  line-height: 1.7;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video {
+  position: relative;
+
+  width: 80%;
+
+  margin: 120px auto 0;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: var(--deep-olive);
+
+  border:
+    1px solid rgba(217, 222, 194, 0.15);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   VIDEO FRAME
+========================================================= */
+
+.video iframe {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  display: block;
+}
+
+
+/* =========================================================
+   VIDEO ACCENT
+========================================================= */
+
+.video::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  border:
+    1px solid rgba(124, 143, 61, 0.2);
+
+  box-shadow:
+    inset 0 0 80px rgba(17, 20, 13, 0.35);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.placeholder {
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      rgba(17, 20, 13, 0.45),
+      rgba(17, 20, 13, 0.8)
+    ),
+    url("https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=1800&q=85")
+    center / cover;
+
+  filter:
+    saturate(0.55)
+    contrast(1.05);
+
+  text-align: center;
+}
+
+
+.placeholder span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(24px, 3vw, 40px);
+
+  letter-spacing: 0.05em;
+
+  color: var(--light-sage);
+}
+
+
+.placeholder small {
+  margin-top: 10px;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+
+  color: var(--sap-green);
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   VIDEO CORNER MARK
+========================================================= */
+
+.video::before {
+  content: "04";
+
+  position: absolute;
+
+  top: 18px;
+
+  left: 20px;
+
+  z-index: 5;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+  color: var(--light-sage);
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding:
+      100px 24px 130px;
+  }
+
+
+  .header {
+    font-size: 8px;
+  }
+
+
+  .content {
+    margin-top: 90px;
+  }
+
+
+  .heading {
+    display: block;
+  }
+
+
+  .heading > span {
+    display: block;
+
+    margin-bottom: 35px;
+  }
+
+
+  .heading h2 {
+    margin: 45px 0;
+
+    font-size: 18vw;
+  }
+
+
+  .heading p {
+    max-width: 280px;
+
+    font-size: 8px;
+  }
+
+
+  .video {
+    width: 100%;
+
+    margin-top: 80px;
+
+    aspect-ratio: 16 / 9;
+  }
+
+
+  .video::before {
+    top: 12px;
+
+    left: 12px;
+  }
+
+}

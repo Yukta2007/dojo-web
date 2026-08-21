@@ -1,0 +1,179 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(24, 39, 25, 0.92) 0%,
+      rgba(39, 59, 38, 0.72) 45%,
+      rgba(74, 91, 64, 0.38) 100%
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: #eee7d9;
+
+  padding: 20px 7vw;
+
+  border-bottom:
+    1px solid rgba(232, 225, 213, 0.15);
+}
+
+/* INNER */
+
+.navInner {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+  color: #f3ecdd;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* NAV LINKS */
+
+.navLinks {
+  display: flex;
+
+  align-items: center;
+
+  gap: 42px;
+}
+
+
+.navLinks a {
+  position: relative;
+
+  color: #eee7d9;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.navLinks a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: #d2a13a;
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.navLinks a:hover {
+  color: #d9b65f;
+}
+
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+
+/* NAV BUTTON */
+
+.navButton {
+  padding: 11px 18px;
+
+  border:
+    1px solid rgba(241, 234, 220, 0.35);
+
+  background:
+    rgba(232, 225, 213, 0.08);
+
+  color: #f3ecdd;
+
+  font-size: 9px;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.navButton:hover {
+  background: #d2a13a;
+
+  color: #24321d;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 18px 24px;
+  }
+
+
+  .navLinks {
+    gap: 18px;
+  }
+
+
+  .navLinks a {
+    font-size: 8px;
+  }
+
+
+  .navButton {
+    display: none;
+  }
+
+}
