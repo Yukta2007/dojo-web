@@ -1,0 +1,382 @@
+/* =========================================================
+   JOURNAL HIGHLIGHTS
+========================================================= */
+
+.highlightsSection {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 130px 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #f5f1e8;
+  color: #11140f;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.sectionNumber {
+  position: absolute;
+
+  top: 10%;
+  left: 10vw;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  letter-spacing: 0.15em;
+
+  color: #8b733e;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.reflectionHeader {
+  margin-bottom: 70px;
+}
+
+.reflectionHeader > span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #8b733e;
+}
+
+
+.reflectionHeader h2 {
+  margin: 0;
+
+  max-width: 1000px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(70px, 10vw, 155px);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+
+  color: #11140f;
+}
+
+
+/* =========================================================
+   REFLECTION GRID
+========================================================= */
+
+.reflectionGrid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   REFLECTION CARD
+========================================================= */
+
+.reflectionCard {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 24px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid rgba(17, 20, 15, 0.25);
+
+  cursor: text;
+}
+
+
+/* =========================================================
+   CARD LABEL
+========================================================= */
+
+.reflectionCard > span {
+  margin-bottom: 35px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: #8b733e;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.reflectionCard textarea {
+  width: 100%;
+  flex: 1;
+
+  min-height: 180px;
+
+  padding: 0;
+
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #11140f;
+}
+
+
+.reflectionCard textarea::placeholder {
+  color: rgba(17, 20, 15, 0.3);
+
+  transition: color 0.3s ease;
+}
+
+
+.reflectionCard textarea:focus::placeholder {
+  color: rgba(17, 20, 15, 0.12);
+}
+
+
+/* =========================================================
+   GOLD FOCUS LINE
+========================================================= */
+
+.reflectionCard::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #b89a5a;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.5s ease;
+}
+
+
+.reflectionCard:focus-within::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CHARACTER COUNT
+========================================================= */
+
+.reflectionCard small {
+  align-self: flex-end;
+
+  margin-top: 12px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+
+  color: rgba(17, 20, 15, 0.35);
+}
+
+
+/* =========================================================
+   BOTTOM NOTE
+========================================================= */
+
+.bottomNote {
+  margin-top: 60px;
+
+  display: flex;
+  gap: 35px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(17, 20, 15, 0.4);
+}
+
+.bottomNote span {
+  position: relative;
+}
+
+.bottomNote span:not(:last-child)::after {
+  content: "•";
+
+  position: absolute;
+
+  right: -20px;
+
+  color: #b89a5a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .highlightsSection {
+    padding: 110px 7vw;
+  }
+
+  .sectionNumber {
+    left: 7vw;
+  }
+
+  .reflectionGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .reflectionCard {
+    min-height: 230px;
+  }
+
+  .reflectionCard textarea {
+    min-height: 140px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .highlightsSection {
+    min-height: 100svh;
+
+    padding: 100px 25px;
+  }
+
+  .sectionNumber {
+    top: 7%;
+    left: 25px;
+  }
+
+  .reflectionHeader {
+    margin-bottom: 55px;
+  }
+
+  .reflectionHeader > span {
+    margin-bottom: 20px;
+  }
+
+  .reflectionHeader h2 {
+    font-size: clamp(55px, 17vw, 100px);
+
+    line-height: 0.82;
+  }
+
+  .reflectionCard {
+    min-height: 210px;
+
+    padding: 22px 0;
+  }
+
+  .reflectionCard > span {
+    margin-bottom: 25px;
+  }
+
+  .reflectionCard textarea {
+    min-height: 120px;
+
+    font-size: 14px;
+  }
+
+  .bottomNote {
+    margin-top: 45px;
+
+    gap: 25px;
+
+    font-size: 7px;
+  }
+
+  .bottomNote span:not(:last-child)::after {
+    right: -15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .highlightsSection {
+    padding: 90px 20px;
+  }
+
+  .sectionNumber {
+    left: 20px;
+  }
+
+  .reflectionHeader h2 {
+    font-size: 55px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .reflectionCard::after,
+  .reflectionCard textarea::placeholder {
+    transition: none;
+  }
+}

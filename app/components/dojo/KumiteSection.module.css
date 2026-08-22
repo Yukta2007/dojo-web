@@ -1,0 +1,555 @@
+/* =========================================================
+   KUMITE SECTION
+========================================================= */
+
+.kumiteSection {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background: #080807;
+  color: #eee7d9;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.kumiteInner {
+  position: relative;
+
+  width: min(1630px, calc(100% - 160px));
+  height: 100%;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.meta {
+  position: absolute;
+
+  top: 10%;
+  left: 0;
+
+  display: flex;
+  align-items: baseline;
+
+  gap: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: rgba(238, 231, 217, 0.65);
+
+  white-space: nowrap;
+}
+
+.number {
+  font-size: 11px;
+}
+
+.label {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.jp {
+  position: absolute;
+
+  top: 16%;
+  left: 0;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(20px, 1.6vw, 28px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  color: #8fa653;
+
+  opacity: 0.95;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.title {
+  position: absolute;
+
+  top: 25%;
+  left: 6%;
+
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(100px, 13vw, 220px);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.085em;
+
+  text-transform: uppercase;
+
+  color: #eee7d9;
+
+  white-space: nowrap;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  position: absolute;
+
+  left: 0;
+  bottom: 16%;
+
+  width: min(390px, 30vw);
+
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(238, 231, 217, 0.65);
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   TECHNIQUE LIST
+========================================================= */
+
+.techniques {
+  position: absolute;
+
+  right: 0;
+  bottom: 14%;
+
+  width: min(450px, 34vw);
+
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 50px;
+  row-gap: 0;
+
+  list-style: none;
+
+  border-top: 1px solid rgba(238, 231, 217, 0.18);
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   TECHNIQUE
+========================================================= */
+
+.technique {
+  position: relative;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid rgba(238, 231, 217, 0.13);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  letter-spacing: 0;
+
+  color: rgba(238, 231, 217, 0.58);
+
+  transition:
+    color 0.35s ease,
+    padding-left 0.35s ease;
+}
+
+.technique:hover {
+  padding-left: 7px;
+
+  color: #8fa653;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scrollHint {
+  position: absolute;
+
+  top: 10%;
+  right: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  color: rgba(238, 231, 217, 0.38);
+}
+
+
+/* =========================================================
+   SUBTLE CENTER LINE
+========================================================= */
+
+.kumiteSection::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  background: rgba(238, 231, 217, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   GREEN ACCENT
+========================================================= */
+
+.kumiteSection::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #8fa653;
+
+  transform-origin: left;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .kumiteInner {
+    width: calc(100% - 110px);
+  }
+
+  .title {
+    left: 7%;
+
+    font-size: clamp(95px, 12vw, 190px);
+  }
+
+  .description {
+    width: 360px;
+  }
+
+  .techniques {
+    width: 400px;
+
+    column-gap: 35px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .kumiteSection {
+    min-height: 680px;
+  }
+
+  .kumiteInner {
+    width: calc(100% - 60px);
+  }
+
+  .meta {
+    top: 9%;
+  }
+
+  .jp {
+    top: 15%;
+  }
+
+  .title {
+    top: 27%;
+    left: 4%;
+
+    font-size: clamp(80px, 14vw, 155px);
+  }
+
+  .description {
+    bottom: 13%;
+
+    width: 320px;
+
+    font-size: 13px;
+  }
+
+  .techniques {
+    right: 0;
+    bottom: 12%;
+
+    width: 350px;
+
+    column-gap: 25px;
+  }
+
+  .technique {
+    font-size: 10px;
+
+    padding: 11px 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .kumiteSection {
+    height: 100svh;
+
+    min-height: 620px;
+  }
+
+  .kumiteInner {
+    width: calc(100% - 40px);
+  }
+
+  .meta {
+    top: 8%;
+
+    font-size: 10px;
+  }
+
+  .number {
+    font-size: 9px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+
+  .jp {
+    top: 16%;
+
+    font-size: 18px;
+  }
+
+  .title {
+    top: 27%;
+    left: 0;
+
+    font-size: clamp(65px, 19vw, 110px);
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+  }
+
+  .description {
+    left: 0;
+    bottom: 17%;
+
+    width: min(310px, 82vw);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  /*
+    Keep the list visible but compact.
+  */
+  .techniques {
+    right: 0;
+    bottom: 8%;
+
+    width: 165px;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 0;
+  }
+
+  .technique {
+    padding: 8px 0;
+
+    font-size: 9px;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+
+  .kumiteSection::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .kumiteInner {
+    width: calc(100% - 30px);
+  }
+
+  .meta {
+    top: 7%;
+  }
+
+  .jp {
+    top: 15%;
+
+    font-size: 16px;
+  }
+
+  .title {
+    top: 27%;
+
+    font-size: clamp(58px, 18vw, 90px);
+  }
+
+  .description {
+    bottom: 18%;
+
+    width: 270px;
+
+    font-size: 11px;
+  }
+
+  .techniques {
+    width: 140px;
+
+    bottom: 8%;
+  }
+
+  .technique {
+    font-size: 8px;
+
+    padding: 7px 0;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .title,
+  .jp,
+  .description,
+  .techniques,
+  .technique {
+    transition: none !important;
+
+    animation: none !important;
+
+    transform: none !important;
+  }
+}

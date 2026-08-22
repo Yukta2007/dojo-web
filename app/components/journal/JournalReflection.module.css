@@ -1,0 +1,280 @@
+/* =========================================================
+   JOURNAL — REFLECTION
+========================================================= */
+
+.reflectionSection {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 130px 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #11140f;
+  color: #f5f1e8;
+}
+
+
+/* =========================================================
+   TOP INFORMATION
+========================================================= */
+
+.reflectionTop {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 65px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #d7bd7b;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.reflectionTitle {
+  margin: 0 0 50px;
+
+  max-width: 1000px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(80px, 12vw, 180px);
+  font-weight: 500;
+
+  line-height: 0.78;
+  letter-spacing: -0.08em;
+
+  text-transform: uppercase;
+
+  color: #f5f1e8;
+}
+
+
+/* =========================================================
+   WRITING AREA
+========================================================= */
+
+.reflectionTextarea {
+  width: 100%;
+
+  min-height: 240px;
+
+  padding: 0;
+
+  resize: vertical;
+
+  border: none;
+  border-bottom: 1px solid rgba(245, 241, 232, 0.25);
+
+  outline: none;
+
+  background: transparent;
+
+  color: #f5f1e8;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  transition:
+    border-color 0.4s ease,
+    opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   TEXTAREA FOCUS
+========================================================= */
+
+.reflectionTextarea:focus {
+  border-bottom-color: #b89a5a;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.reflectionTextarea::placeholder {
+  color: rgba(245, 241, 232, 0.25);
+
+  transition: color 0.3s ease;
+}
+
+.reflectionTextarea:focus::placeholder {
+  color: rgba(245, 241, 232, 0.15);
+}
+
+
+/* =========================================================
+   BOTTOM INFORMATION
+========================================================= */
+
+.reflectionFooter {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 18px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(245, 241, 232, 0.4);
+}
+
+
+/* =========================================================
+   GOLD ACCENT
+========================================================= */
+
+.reflectionAccent {
+  position: absolute;
+
+  left: 10vw;
+  bottom: 10%;
+
+  width: 45px;
+  height: 1px;
+
+  background: #b89a5a;
+
+  transform-origin: left center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .reflectionSection {
+    padding: 110px 7vw;
+  }
+
+  .reflectionTitle {
+    font-size: clamp(75px, 13vw, 140px);
+  }
+
+  .reflectionAccent {
+    left: 7vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .reflectionSection {
+    min-height: 100svh;
+
+    padding: 100px 25px;
+  }
+
+
+  .reflectionTop {
+    margin-bottom: 50px;
+
+    font-size: 8px;
+  }
+
+
+  .reflectionTitle {
+    margin-bottom: 45px;
+
+    font-size: clamp(65px, 18vw, 110px);
+
+    line-height: 0.82;
+  }
+
+
+  .reflectionTextarea {
+    min-height: 250px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  .reflectionFooter {
+    font-size: 8px;
+
+    gap: 20px;
+  }
+
+
+  .reflectionAccent {
+    left: 25px;
+    bottom: 7%;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .reflectionSection {
+    padding: 90px 20px;
+  }
+
+  .reflectionTitle {
+    font-size: 62px;
+  }
+
+  .reflectionTextarea {
+    min-height: 220px;
+  }
+
+  .reflectionAccent {
+    left: 20px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reflectionTextarea,
+  .reflectionTextarea::placeholder {
+    transition: none;
+  }
+}

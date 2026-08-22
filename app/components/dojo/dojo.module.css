@@ -1,0 +1,563 @@
+/* =========================================================
+   HOJO UNDO — EQUIPMENT SECTION
+========================================================= */
+
+.hojoSection {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 80px 140px;
+
+  overflow: hidden;
+
+  background: #8fa653;
+  color: #080807;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   SECTION TOP
+========================================================= */
+
+.sectionTop {
+  position: relative;
+
+  width: 100%;
+  max-width: 1630px;
+
+  margin: 0 auto 120px;
+
+  display: flex;
+  align-items: baseline;
+
+  gap: 5px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: rgba(8, 8, 7, 0.75);
+}
+
+.sectionTop span:first-child {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hojoHeader {
+  position: relative;
+
+  width: min(1630px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.6fr;
+
+  column-gap: 80px;
+
+  align-items: end;
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.japanese {
+  position: absolute;
+
+  top: -5px;
+  left: 0;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(18px, 1.5vw, 26px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  color: #080807;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hojoTitle {
+  grid-column: 1;
+
+  margin: 65px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(90px, 13vw, 210px);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.08em;
+
+  text-transform: uppercase;
+
+  color: #080807;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.hojoHeader > p {
+  grid-column: 2;
+
+  max-width: 430px;
+
+  margin: 0 0 8px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(8, 8, 7, 0.68);
+}
+
+
+/* =========================================================
+   EQUIPMENT GRID
+========================================================= */
+
+.hojoGrid {
+  width: min(1630px, 100%);
+
+  margin: 110px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 100px;
+
+  border-top: 1px solid rgba(8, 8, 7, 0.28);
+}
+
+
+/* =========================================================
+   EQUIPMENT ITEM
+========================================================= */
+
+.hojoItem {
+  min-height: 130px;
+
+  padding: 25px 0;
+
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 20px;
+
+  border-bottom: 1px solid rgba(8, 8, 7, 0.28);
+
+  will-change: transform, opacity;
+
+  transition:
+    padding-left 0.4s ease,
+    background-color 0.4s ease;
+}
+
+
+/* =========================================================
+   ITEM NUMBER
+========================================================= */
+
+.hojoItem > span {
+  padding-top: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(8, 8, 7, 0.5);
+}
+
+
+/* =========================================================
+   ITEM CONTENT
+========================================================= */
+
+.hojoItem h3 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: #080807;
+}
+
+.hojoItem p {
+  max-width: 400px;
+
+  margin: 10px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(8, 8, 7, 0.6);
+}
+
+
+/* =========================================================
+   ITEM HOVER
+========================================================= */
+
+.hojoItem:hover {
+  padding-left: 8px;
+}
+
+.hojoItem:hover > span {
+  color: #080807;
+}
+
+.hojoItem:hover h3 {
+  color: #eee7d9;
+}
+
+.hojoItem:hover p {
+  color: rgba(238, 231, 217, 0.75);
+}
+
+
+/* =========================================================
+   SUBTLE DECORATIVE LINE
+========================================================= */
+
+.hojoSection::after {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 100%;
+
+  top: 0;
+  left: 50%;
+
+  background: rgba(8, 8, 7, 0.07);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .hojoSection {
+    padding: 110px 60px 120px;
+  }
+
+  .sectionTop {
+    margin-bottom: 100px;
+  }
+
+  .hojoHeader {
+    column-gap: 60px;
+  }
+
+  .hojoTitle {
+    font-size: clamp(85px, 12vw, 180px);
+  }
+
+  .hojoGrid {
+    column-gap: 70px;
+    margin-top: 90px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .hojoSection {
+    padding: 90px 40px 100px;
+  }
+
+  .sectionTop {
+    margin-bottom: 80px;
+  }
+
+  .hojoHeader {
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 40px;
+  }
+
+  .hojoTitle {
+    margin-top: 55px;
+
+    font-size: clamp(75px, 12vw, 130px);
+  }
+
+  .hojoHeader > p {
+    max-width: 330px;
+
+    font-size: 13px;
+  }
+
+  .hojoGrid {
+    margin-top: 80px;
+
+    column-gap: 40px;
+  }
+
+  .hojoItem {
+    min-height: 115px;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 12px;
+  }
+
+  .hojoItem h3 {
+    font-size: 14px;
+  }
+
+  .hojoItem p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hojoSection {
+    min-height: auto;
+
+    padding: 75px 20px 90px;
+  }
+
+  .sectionTop {
+    margin-bottom: 70px;
+
+    font-size: 10px;
+  }
+
+  .sectionTop span:first-child {
+    font-size: 9px;
+  }
+
+  .hojoHeader {
+    display: block;
+  }
+
+  .japanese {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 17px;
+  }
+
+  .hojoTitle {
+    margin: 0;
+
+    font-size: clamp(65px, 19vw, 105px);
+
+    line-height: 0.82;
+  }
+
+  .hojoHeader > p {
+    width: min(320px, 100%);
+
+    margin: 30px 0 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .hojoGrid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    margin-top: 65px;
+  }
+
+  .hojoItem {
+    min-height: auto;
+
+    padding: 20px 0;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 10px;
+  }
+
+  .hojoItem h3 {
+    font-size: 13px;
+  }
+
+  .hojoItem p {
+    max-width: 300px;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  .hojoSection::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .hojoSection {
+    padding: 65px 18px 75px;
+  }
+
+  .sectionTop {
+    margin-bottom: 60px;
+  }
+
+  .japanese {
+    font-size: 15px;
+  }
+
+  .hojoTitle {
+    font-size: clamp(58px, 18vw, 82px);
+  }
+
+  .hojoHeader > p {
+    font-size: 11px;
+  }
+
+  .hojoGrid {
+    margin-top: 55px;
+  }
+
+  .hojoItem {
+    padding: 17px 0;
+  }
+
+  .hojoItem h3 {
+    font-size: 12px;
+  }
+
+  .hojoItem p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hojoItem,
+  .hojoTitle {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,734 @@
+
+/* =========================================================
+   DOJO HERO
+========================================================= */
+
+.dojoHero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background: #080807;
+  color: #eee7d9;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   TOP LEFT — BRAND
+========================================================= */
+
+.heroBrand {
+  position: absolute;
+
+  top: 42px;
+  left: 60px;
+
+  z-index: 10;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+
+  color: #eee7d9;
+}
+
+
+/* =========================================================
+   TOP RIGHT — MENU
+========================================================= */
+
+.heroMenu {
+  position: absolute;
+
+  top: 40px;
+  right: 60px;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  letter-spacing: 0.14em;
+
+  color: rgba(238, 231, 217, 0.75);
+}
+
+.menuIcon {
+  width: 25px;
+  height: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.menuIcon span {
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  background: #eee7d9;
+
+  transform-origin: center;
+
+  transition:
+    transform 0.35s ease,
+    width 0.35s ease;
+}
+
+.heroMenu:hover .menuIcon span:first-child {
+  transform: translateX(-3px);
+}
+
+.heroMenu:hover .menuIcon span:last-child {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   LEFT SECTION NUMBER
+========================================================= */
+
+.heroSectionNumber {
+  position: absolute;
+
+  left: 60px;
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+.heroSectionNumber span {
+  display: block;
+
+  width: 1px;
+  height: 42px;
+
+  background: rgba(238, 231, 217, 0.45);
+}
+
+.heroSectionNumber p {
+  margin: 0;
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(238, 231, 217, 0.65);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.heroContent {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  z-index: 4;
+
+  width: min(900px, 75%);
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   JAPANESE TITLE
+========================================================= */
+
+.heroJapanese {
+  margin-bottom: 25px;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(20px, 2vw, 32px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.25em;
+
+  color: #8fa653;
+
+  opacity: 0.95;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.heroTitle {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(80px, 12vw, 190px);
+
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: #eee7d9;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.heroDescription {
+  margin: 32px auto 0;
+
+  max-width: 500px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(238, 231, 217, 0.62);
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   CIRCLE
+========================================================= */
+
+.heroCircle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 1;
+
+  width: min(700px, 55vw);
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(143, 166, 83, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(143, 166, 83, 0.09) 0%,
+      rgba(143, 166, 83, 0.035) 42%,
+      transparent 70%
+    );
+
+  box-shadow:
+    0 0 80px rgba(143, 166, 83, 0.05),
+    inset 0 0 80px rgba(143, 166, 83, 0.03);
+
+  pointer-events: none;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   CIRCLE INNER DETAIL
+========================================================= */
+
+.heroCircle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12%;
+
+  border: 1px solid rgba(238, 231, 217, 0.08);
+
+  border-radius: 50%;
+}
+
+.heroCircle::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 24%;
+
+  border: 1px solid rgba(143, 166, 83, 0.1);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   BOTTOM AREA
+========================================================= */
+
+.heroBottom {
+  position: absolute;
+
+  left: 60px;
+  right: 60px;
+  bottom: 42px;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.heroBadge {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(238, 231, 217, 0.35);
+
+  border-radius: 50%;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.05em;
+
+  color: rgba(238, 231, 217, 0.75);
+}
+
+
+/* =========================================================
+   SCROLL PROMPT
+========================================================= */
+
+.scrollPrompt {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color: rgba(238, 231, 217, 0.45);
+}
+
+.scrollPrompt span {
+  display: block;
+
+  width: 30px;
+  height: 1px;
+
+  background: rgba(238, 231, 217, 0.4);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.scrollPrompt span::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: #8fa653;
+
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 0;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.scrollPrompt p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   RIGHT DOT NAVIGATION
+========================================================= */
+
+.heroDots {
+  position: absolute;
+
+  right: 60px;
+  top: 50%;
+
+  z-index: 10;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.heroDots span {
+  display: block;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: rgba(238, 231, 217, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.heroDots .activeDot {
+  width: 6px;
+  height: 6px;
+
+  background: #8fa653;
+
+  box-shadow: 0 0 10px rgba(143, 166, 83, 0.35);
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND GRAIN
+========================================================= */
+
+.dojoHero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .heroBrand {
+    left: 35px;
+    top: 32px;
+  }
+
+  .heroMenu {
+    right: 35px;
+    top: 30px;
+  }
+
+  .heroSectionNumber {
+    left: 35px;
+  }
+
+  .heroBottom {
+    left: 35px;
+    right: 35px;
+    bottom: 32px;
+  }
+
+  .heroDots {
+    right: 35px;
+  }
+
+  .heroContent {
+    width: 85%;
+  }
+
+  .heroTitle {
+    font-size: clamp(70px, 13vw, 140px);
+  }
+
+  .heroCircle {
+    width: 60vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .dojoHero {
+    height: 100svh;
+    min-height: 620px;
+  }
+
+  .heroBrand {
+    top: 25px;
+    left: 20px;
+
+    font-size: 12px;
+  }
+
+  .heroMenu {
+    top: 23px;
+    right: 20px;
+
+    font-size: 9px;
+  }
+
+  .menuIcon {
+    width: 22px;
+    height: 14px;
+  }
+
+  .heroSectionNumber {
+    left: 20px;
+    top: 50%;
+
+    gap: 9px;
+  }
+
+  .heroSectionNumber span {
+    height: 30px;
+  }
+
+  .heroContent {
+    width: calc(100% - 60px);
+  }
+
+  .heroJapanese {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+  }
+
+  .heroTitle {
+    font-size: clamp(55px, 18vw, 100px);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.065em;
+
+    white-space: normal;
+  }
+
+  .heroDescription {
+    margin-top: 25px;
+
+    max-width: 320px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .heroDescription br {
+    display: none;
+  }
+
+  .heroCircle {
+    width: 80vw;
+
+    opacity: 0.7;
+  }
+
+  .heroBottom {
+    left: 20px;
+    right: 20px;
+
+    bottom: 25px;
+  }
+
+  .heroBadge {
+    width: 30px;
+    height: 30px;
+
+    font-size: 9px;
+  }
+
+  .scrollPrompt {
+    font-size: 8px;
+
+    gap: 8px;
+  }
+
+  .scrollPrompt span {
+    width: 22px;
+  }
+
+  .heroDots {
+    right: 20px;
+
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .heroSectionNumber {
+    display: none;
+  }
+
+  .heroContent {
+    width: calc(100% - 45px);
+  }
+
+  .heroJapanese {
+    font-size: 16px;
+  }
+
+  .heroTitle {
+    font-size: clamp(52px, 17vw, 78px);
+  }
+
+  .heroDescription {
+    max-width: 280px;
+
+    font-size: 11px;
+  }
+
+  .heroCircle {
+    width: 88vw;
+  }
+
+  .heroDots {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .dojoHero *,
+  .dojoHero::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}

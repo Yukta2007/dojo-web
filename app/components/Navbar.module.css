@@ -1,179 +1,847 @@
 /* =========================================================
-   NAVBAR
+   HEADER — TRANSPARENT / ARCHITECTURAL
 ========================================================= */
 
-.navbar {
+.header {
   position: fixed;
 
   top: 0;
   left: 0;
 
   width: 100%;
+  height: 112px;
 
   z-index: 1000;
 
-  background:
-    linear-gradient(
-      110deg,
-      rgba(24, 39, 25, 0.92) 0%,
-      rgba(39, 59, 38, 0.72) 45%,
-      rgba(74, 91, 64, 0.38) 100%
-    );
+  color: #f1eee4;
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: transparent;
 
-  color: #eee7d9;
+  border-bottom: 1px solid rgba(241, 238, 228, 0.16);
 
-  padding: 20px 7vw;
-
-  border-bottom:
-    1px solid rgba(232, 225, 213, 0.15);
+  box-sizing: border-box;
 }
 
-/* INNER */
 
-.navInner {
+/* subtle darkening behind navigation */
+
+.header::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 28, 22, 0.28),
+      transparent
+    );
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
   width: 100%;
+  height: 100%;
+
+  padding: 0 6vw;
 
   display: flex;
 
   align-items: center;
 
   justify-content: space-between;
+
+  box-sizing: border-box;
 }
 
 
-/* LOGO */
+/* =========================================================
+   BRAND
+========================================================= */
 
-.logo {
-  color: #f3ecdd;
+.brand {
+  display: flex;
 
+  flex-direction: column;
+
+  gap: 6px;
+
+  text-decoration: none;
+
+  color: #f4f0e5;
+
+  flex-shrink: 0;
+}
+
+
+.kanji {
   font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
     Georgia,
-    "Times New Roman",
     serif;
 
-  font-size: 22px;
+  font-size: 27px;
 
-  font-weight: 400;
+  font-weight: 500;
 
-  letter-spacing: -0.03em;
+  line-height: 1;
+
+  letter-spacing: 0.06em;
+
+  color: #f1eee4;
+
+  transition: color 0.35s ease;
 }
 
 
-/* NAV LINKS */
+.brand:hover .kanji {
+  color: #c7aa52;
+}
 
-.navLinks {
+
+.brandText {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  line-height: 1.55;
+
+  letter-spacing: 0.24em;
+
+  color: rgba(241, 238, 228, 0.72);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
   display: flex;
 
   align-items: center;
 
-  gap: 42px;
+  gap: clamp(25px, 3vw, 52px);
+
+  margin-left: auto;
+
+  margin-right: 4vw;
+
+  height: 100%;
 }
 
 
-.navLinks a {
+.navigation a {
   position: relative;
 
-  color: #eee7d9;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
 
   text-decoration: none;
 
-  font-size: 9px;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  letter-spacing: 0.16em;
+  font-size: 8px;
 
-  text-transform: uppercase;
+  font-weight: 500;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(246, 243, 234, 0.82);
 
   transition:
     color 0.3s ease;
 }
 
 
-.navLinks a::after {
+.navigation a span {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 7px;
+
+  color: rgba(199, 170, 82, 0.8);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* underline */
+
+.navigation a::after {
   content: "";
 
   position: absolute;
 
   left: 0;
-  bottom: -7px;
+
+  bottom: -12px;
 
   width: 0;
+
   height: 1px;
 
-  background: #d2a13a;
+  background: #c7aa52;
 
   transition:
-    width 0.3s ease;
+    width 0.4s ease;
 }
 
 
-.navLinks a:hover {
-  color: #d9b65f;
+.navigation a:hover {
+  color: #ffffff;
 }
 
 
-.navLinks a:hover::after {
+.navigation a:hover::after {
   width: 100%;
 }
 
 
-/* NAV BUTTON */
+/* =========================================================
+   ACTIONS
+========================================================= */
 
-.navButton {
-  padding: 11px 18px;
+.actions {
+  display: flex;
 
-  border:
-    1px solid rgba(241, 234, 220, 0.35);
+  align-items: center;
 
-  background:
-    rgba(232, 225, 213, 0.08);
+  gap: 26px;
 
-  color: #f3ecdd;
+  flex-shrink: 0;
+}
 
-  font-size: 9px;
 
-  letter-spacing: 0.14em;
+/* =========================================================
+   DOJO MODE
+========================================================= */
 
-  text-transform: uppercase;
+.modeButton {
+  height: 42px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid rgba(199, 170, 82, 0.65);
+
+  background: rgba(15, 30, 23, 0.18);
+
+  color: #e8d9a6;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.17em;
 
   cursor: pointer;
 
+  backdrop-filter: blur(3px);
+
   transition:
-    background 0.3s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.modeButton:hover {
+  background: #c7aa52;
+
+  color: #18251e;
+}
+
+
+.moon {
+  font-size: 17px;
+
+  color: #c7aa52;
+}
+
+
+.modeButton:hover .moon {
+  color: #18251e;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout {
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+
+  color: rgba(246, 243, 234, 0.65);
+
+  transition: color 0.3s ease;
+}
+
+
+.logout:hover {
+  color: #c7aa52;
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+========================================================= */
+
+.bottomLine {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 6vw;
+
+  right: 6vw;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(241, 238, 228, 0.18),
+      rgba(199, 170, 82, 0.4),
+      rgba(241, 238, 228, 0.18)
+    );
+}
+
+
+.bottomLine span {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .header {
+    height: 82px;
+  }
+
+  .navbar {
+    padding: 0 22px;
+  }
+
+  .kanji {
+    font-size: 21px;
+  }
+
+  .brandText {
+    font-size: 6px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .actions {
+    margin-left: auto;
+
+    gap: 14px;
+  }
+
+  .modeButton {
+    height: 36px;
+
+    padding: 0 12px;
+
+    font-size: 7px;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  .bottomLine {
+    left: 22px;
+    right: 22px;
+  }
+}
+
+
+/* =========================================================
+   SUBTLE WOOD / DOJO TEXTURE
+========================================================= */
+
+.header::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.08;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 80px,
+      rgba(235, 225, 190, 0.12) 81px,
+      transparent 82px
+    );
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: relative;
+
+  width: 100%;
+
+  height: 100%;
+
+  padding:
+    0 6vw;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  flex-shrink: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  text-decoration: none;
+
+  color: #f1eee4;
+}
+
+
+.kanji {
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "MS Mincho",
+    serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+
+  color: #c6a84b;
+
+  transition:
+    color 0.35s ease;
+}
+
+
+.brand:hover .kanji {
+  color: #e0c66b;
+}
+
+
+.brandText {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.25em;
+
+  color:
+    rgba(238, 234, 222, 0.72);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(20px, 2.7vw, 48px);
+
+  margin-left: auto;
+}
+
+
+.navigation a {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+
+  color:
+    rgba(240, 237, 225, 0.78);
+
+  transition:
     color 0.3s ease;
 }
 
 
-.navButton:hover {
-  background: #d2a13a;
+.navigation a span {
+  font-family:
+    Georgia,
+    serif;
 
-  color: #24321d;
+  font-size: 7px;
+
+  letter-spacing: 0.05em;
+
+  color:
+    rgba(198, 168, 75, 0.55);
+
+  transition:
+    color 0.3s ease;
 }
 
 
-/* MOBILE */
+/* =========================================================
+   NAV HOVER
+========================================================= */
 
-@media (max-width: 768px) {
+.navigation a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -11px;
+
+  width: 0;
+
+  height: 1px;
+
+  background: #c6a84b;
+
+  transition:
+    width 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+
+.navigation a:hover {
+  color: #ffffff;
+}
+
+
+.navigation a:hover span {
+  color: #c6a84b;
+}
+
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DOJO MODE
+========================================================= */
+
+.modeButton {
+  height: 46px;
+
+  padding:
+    0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border:
+    1px solid rgba(198, 168, 75, 0.65);
+
+  background:
+    rgba(198, 168, 75, 0.05);
+
+  color: #e4d39a;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.modeButton:hover {
+  background: #c6a84b;
+
+  border-color: #c6a84b;
+
+  color: #18261e;
+}
+
+
+.moon {
+  font-size: 18px;
+
+  line-height: 1;
+
+  color: #c6a84b;
+}
+
+
+.modeButton:hover .moon {
+  color: #18261e;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout {
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 0.17em;
+
+  color:
+    rgba(240, 237, 225, 0.55);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.logout:hover {
+  color: #c6a84b;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL BOTTOM LINE
+========================================================= */
+
+.bottomLine {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 6vw;
+
+  right: 6vw;
+
+  height: 1px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+
+.bottomLine span {
+  width: 1px;
+
+  height: 7px;
+
+  background:
+    rgba(198, 168, 75, 0.45);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
 
   .navbar {
-    padding: 18px 24px;
+    padding: 0 30px;
+
+    gap: 25px;
   }
 
-
-  .navLinks {
+  .navigation {
     gap: 18px;
   }
 
-
-  .navLinks a {
+  .navigation a {
     font-size: 8px;
   }
 
+  .brandText {
+    font-size: 7px;
+  }
 
-  .navButton {
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .header {
+    height: 82px;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .kanji {
+    font-size: 21px;
+  }
+
+  .brandText {
+    font-size: 6px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .navigation {
     display: none;
+  }
+
+  .actions {
+    margin-left: auto;
+
+    gap: 15px;
+  }
+
+  .modeButton {
+    height: 38px;
+
+    padding: 0 12px;
+
+    font-size: 7px;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  .bottomLine {
+    left: 20px;
+    right: 20px;
   }
 
 }

@@ -1,0 +1,53 @@
+/* =========================================
+   CURSOR
+========================================= */
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 90px;
+  height: 90px;
+
+  border: 1px solid #8fa653;
+  border-radius: 50%;
+
+  background: transparent;
+
+  pointer-events: none;
+  z-index: 999999;
+
+  transform: translate(-50%, -50%);
+
+  will-change: transform, width, height, border-color;
+}
+
+
+/* =========================================
+   HOVER STATE
+========================================= */
+
+.active {
+  border-color: #eee7d9;
+}
+
+
+/* =========================================
+   IMAGE / PROJECT HOVER
+========================================= */
+
+.imageHover {
+  border-color: #eee7d9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

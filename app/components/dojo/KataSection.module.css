@@ -1,0 +1,558 @@
+/* =========================================================
+   KATA SECTION
+========================================================= */
+
+.kataSection {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  overflow: hidden;
+
+  background: #080807;
+  color: #eee7d9;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HORIZONTAL TRACK
+========================================================= */
+
+.kataTrack {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   INTRO PANEL
+========================================================= */
+
+.kataIntro {
+  position: relative;
+
+  width: 650px;
+  height: 100vh;
+
+  min-height: 700px;
+
+  flex-shrink: 0;
+
+  padding: 110px 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-right: 1px solid rgba(238, 231, 217, 0.15);
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.kataNumber {
+  position: absolute;
+
+  top: 10%;
+  left: 70px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.05em;
+
+  color: rgba(238, 231, 217, 0.5);
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.kataJapanese {
+  margin-bottom: 20px;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(22px, 2vw, 32px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  color: #8fa653;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.kataIntro h2 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(100px, 13vw, 190px);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.08em;
+
+  color: #eee7d9;
+}
+
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.kataIntro p {
+  width: 390px;
+
+  max-width: 100%;
+
+  margin: 38px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(238, 231, 217, 0.62);
+}
+
+
+/* =========================================================
+   KATA CARD
+========================================================= */
+
+.kataCard {
+  position: relative;
+
+  width: 430px;
+  height: 54vh;
+
+  min-height: 390px;
+
+  flex-shrink: 0;
+
+  margin-right: 30px;
+
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid rgba(238, 231, 217, 0.18);
+
+  background: #10100e;
+
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.kataCard > span {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  color: rgba(238, 231, 217, 0.4);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.kataCard h3 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(28px, 3vw, 45px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+
+  color: #eee7d9;
+}
+
+.kataCard p {
+  margin: 18px 0 0;
+
+  max-width: 330px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: rgba(238, 231, 217, 0.55);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.kataCard:hover {
+  background: #8fa653;
+
+  border-color: #8fa653;
+
+  transform: translateY(-8px);
+}
+
+.kataCard:hover > span,
+.kataCard:hover h3 {
+  color: #080807;
+}
+
+.kataCard:hover p {
+  color: rgba(8, 8, 7, 0.68);
+}
+
+
+/* =========================================================
+   BOTTOM LABEL
+========================================================= */
+
+.sectionLabelBottom {
+  position: absolute;
+
+  left: 60px;
+  bottom: 40px;
+
+  z-index: 10;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: rgba(238, 231, 217, 0.4);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DECORATIVE CENTER LINE
+========================================================= */
+
+.kataSection::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  background: rgba(238, 231, 217, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .kataIntro {
+    width: 560px;
+
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .kataNumber {
+    left: 60px;
+  }
+
+  .kataCard {
+    width: 390px;
+
+    height: 52vh;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .kataSection {
+    min-height: 650px;
+  }
+
+  .kataIntro {
+    width: 500px;
+
+    min-height: 650px;
+
+    padding: 90px 45px;
+  }
+
+  .kataNumber {
+    left: 45px;
+  }
+
+  .kataIntro h2 {
+    font-size: clamp(85px, 14vw, 140px);
+  }
+
+  .kataIntro p {
+    width: 330px;
+
+    font-size: 13px;
+  }
+
+  .kataCard {
+    width: 350px;
+
+    height: 48vh;
+
+    min-height: 350px;
+
+    padding: 28px;
+  }
+
+  .kataCard h3 {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .kataSection {
+    height: 100svh;
+    min-height: 620px;
+  }
+
+  .kataTrack {
+    height: 100%;
+  }
+
+  .kataIntro {
+    width: 100vw;
+
+    height: 100svh;
+
+    min-height: 620px;
+
+    padding: 80px 25px;
+
+    border-right: 1px solid rgba(238, 231, 217, 0.12);
+  }
+
+  .kataNumber {
+    top: 9%;
+    left: 25px;
+  }
+
+  .kataJapanese {
+    font-size: 19px;
+
+    margin-bottom: 18px;
+  }
+
+  .kataIntro h2 {
+    font-size: clamp(70px, 20vw, 110px);
+
+    line-height: 0.82;
+  }
+
+  .kataIntro p {
+    width: min(300px, 85vw);
+
+    margin-top: 28px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .kataCard {
+    width: 78vw;
+
+    height: 55vh;
+
+    min-height: 350px;
+
+    margin-right: 18px;
+
+    padding: 25px;
+  }
+
+  .kataCard h3 {
+    font-size: 27px;
+  }
+
+  .kataCard p {
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  .sectionLabelBottom {
+    left: 25px;
+    bottom: 25px;
+
+    font-size: 8px;
+  }
+
+  .kataSection::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .kataIntro {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .kataNumber {
+    left: 20px;
+  }
+
+  .kataIntro h2 {
+    font-size: clamp(65px, 19vw, 85px);
+  }
+
+  .kataIntro p {
+    font-size: 11px;
+  }
+
+  .kataCard {
+    width: 82vw;
+
+    min-height: 330px;
+
+    padding: 22px;
+  }
+
+  .kataCard h3 {
+    font-size: 24px;
+  }
+
+  .kataCard p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kataTrack,
+  .kataCard {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}

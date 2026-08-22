@@ -1,0 +1,375 @@
+/* =========================================================
+   JOURNAL FINAL
+========================================================= */
+
+.finalSection {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 140px 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #8fa653;
+  color: #11140f;
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.finalJapanese {
+  margin-bottom: 30px;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    serif;
+
+  font-size: clamp(22px, 2vw, 32px);
+
+  line-height: 1;
+
+  color: #11140f;
+
+  opacity: 0;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.finalTitle {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(90px, 14vw, 220px);
+
+  font-weight: 500;
+
+  line-height: 0.76;
+
+  letter-spacing: -0.085em;
+
+  text-transform: uppercase;
+
+  color: #11140f;
+
+  opacity: 0;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.finalDescription {
+  position: relative;
+  z-index: 2;
+
+  max-width: 420px;
+
+  margin: 50px 0 35px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  color: rgba(17, 20, 15, 0.65);
+
+  opacity: 0;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.saveButton {
+  position: relative;
+  z-index: 3;
+
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+
+  padding: 15px 22px;
+
+  border: 1px solid rgba(17, 20, 15, 0.5);
+
+  background: transparent;
+
+  color: #11140f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.saveButton:hover {
+  background: #11140f;
+
+  border-color: #11140f;
+
+  color: #f5f1e8;
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.buttonArrow {
+  display: inline-block;
+
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE MARK
+========================================================= */
+
+.finalMark {
+  position: absolute;
+
+  right: 8vw;
+  bottom: 12%;
+
+  width: 260px;
+  height: 260px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform-origin: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MARK CIRCLES
+========================================================= */
+
+.finalMark span {
+  position: absolute;
+
+  display: block;
+
+  width: 180px;
+  height: 180px;
+
+  border: 1px solid rgba(17, 20, 15, 0.3);
+
+  border-radius: 50%;
+}
+
+
+/* Outer circle */
+
+.finalMark span:nth-child(1) {
+  width: 240px;
+  height: 240px;
+}
+
+
+/* Middle circle */
+
+.finalMark span:nth-child(2) {
+  width: 180px;
+  height: 180px;
+}
+
+
+/* Inner circle */
+
+.finalMark span:nth-child(3) {
+  width: 100px;
+  height: 100px;
+
+  background: rgba(17, 20, 15, 0.08);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .finalSection {
+    padding: 120px 7vw;
+  }
+
+  .finalTitle {
+    font-size: clamp(80px, 14vw, 170px);
+  }
+
+  .finalMark {
+    right: 5vw;
+
+    width: 200px;
+    height: 200px;
+  }
+
+  .finalMark span:nth-child(1) {
+    width: 190px;
+    height: 190px;
+  }
+
+  .finalMark span:nth-child(2) {
+    width: 140px;
+    height: 140px;
+  }
+
+  .finalMark span:nth-child(3) {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .finalSection {
+    min-height: 100svh;
+
+    padding: 100px 25px;
+  }
+
+  .finalJapanese {
+    margin-bottom: 25px;
+
+    font-size: 20px;
+  }
+
+  .finalTitle {
+    font-size: clamp(65px, 19vw, 110px);
+
+    line-height: 0.8;
+  }
+
+  .finalDescription {
+    max-width: 300px;
+
+    margin-top: 40px;
+
+    font-size: 13px;
+  }
+
+  .saveButton {
+    gap: 25px;
+
+    padding: 14px 18px;
+
+    font-size: 9px;
+  }
+
+  .finalMark {
+    right: -55px;
+    bottom: 8%;
+
+    width: 170px;
+    height: 170px;
+  }
+
+  .finalMark span:nth-child(1) {
+    width: 170px;
+    height: 170px;
+  }
+
+  .finalMark span:nth-child(2) {
+    width: 125px;
+    height: 125px;
+  }
+
+  .finalMark span:nth-child(3) {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .finalSection {
+    padding: 90px 20px;
+  }
+
+  .finalTitle {
+    font-size: 62px;
+  }
+
+  .finalMark {
+    right: -70px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .finalJapanese,
+  .finalTitle,
+  .finalDescription,
+  .saveButton {
+    opacity: 1;
+  }
+
+  .finalMark {
+    transform: none !important;
+  }
+
+  .saveButton {
+    transition: none;
+  }
+}

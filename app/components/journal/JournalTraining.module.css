@@ -1,0 +1,162 @@
+.section {
+  min-height: 100vh;
+
+  padding: 120px 7vw;
+
+  display: grid;
+
+  grid-template-columns: 70px minmax(280px, 0.8fr) minmax(400px, 1.2fr);
+
+  gap: 60px;
+
+  align-items: center;
+
+  background: #17251c;
+  color: #f5f1e8;
+}
+
+.sectionNumber {
+  align-self: start;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+
+  color: #d7bd7b;
+}
+
+.sectionHeading span {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-size: 9px;
+  letter-spacing: 0.18em;
+
+  color: #d7bd7b;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 6vw, 90px);
+
+  font-weight: 500;
+  line-height: 0.88;
+
+  letter-spacing: -0.065em;
+}
+
+.sectionHeading p {
+  max-width: 350px;
+
+  margin-top: 30px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: rgba(245, 241, 232, 0.6);
+}
+
+.optionGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  max-width: 650px;
+
+  margin-left: auto;
+}
+
+.option {
+  min-height: 85px;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  border: 1px solid rgba(245, 241, 232, 0.18);
+
+  background: transparent;
+
+  color: rgba(245, 241, 232, 0.7);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.option span {
+  color: #d7bd7b;
+  font-size: 9px;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+
+  border-color: #b89a5a;
+
+  color: #fff;
+}
+
+.optionActive {
+  background: #b89a5a;
+
+  border-color: #b89a5a;
+
+  color: #11140f;
+}
+
+.optionActive span {
+  color: #11140f;
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .optionGrid {
+    grid-column: 2;
+
+    margin-left: 0;
+
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    display: block;
+
+    padding: 100px 25px;
+  }
+
+  .sectionNumber {
+    margin-bottom: 45px;
+  }
+
+  .optionGrid {
+    margin-top: 60px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .option {
+    min-height: 70px;
+  }
+}

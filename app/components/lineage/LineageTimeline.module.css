@@ -1,0 +1,771 @@
+/* =========================================================
+   LINEAGE
+========================================================= */
+
+.lineageSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: #12352b;
+  color: #f1eadb;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  width: min(1500px, calc(100% - 160px));
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding-top: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.heroEyebrow {
+  position: absolute;
+
+  top: 110px;
+  left: 0;
+
+  display: flex;
+  gap: 5px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 11px;
+  line-height: 1;
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: rgba(241, 234, 219, 0.6);
+}
+
+.heroEyebrow span:first-child {
+  color: #c7a85a;
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.heroJapanese {
+  position: absolute;
+
+  top: 27%;
+  right: 8%;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(80px, 12vw, 180px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: rgba(199, 168, 90, 0.12);
+
+  writing-mode: vertical-rl;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.heroTitle {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(100px, 16vw, 240px);
+
+  font-weight: 500;
+
+  line-height: 0.75;
+
+  letter-spacing: -0.085em;
+
+  color: #f1eadb;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.heroDescription {
+  position: relative;
+  z-index: 3;
+
+  width: min(440px, 80%);
+
+  margin: 55px 0 0 7%;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: rgba(241, 234, 219, 0.65);
+}
+
+
+/* =========================================================
+   GOLD MARK
+========================================================= */
+
+.heroMark {
+  position: absolute;
+
+  right: 0;
+  bottom: 90px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.heroMark span {
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  background: #c7a85a;
+}
+
+.heroMark span:nth-child(2) {
+  width: 38px;
+}
+
+.heroMark span:nth-child(3) {
+  width: 15px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+  position: relative;
+
+  width: min(1200px, calc(100% - 120px));
+
+  margin: 0 auto;
+
+  padding: 100px 0 180px;
+}
+
+
+/* =========================================================
+   TIMELINE LINE
+========================================================= */
+
+.timelineLine {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 1px;
+
+  background: rgba(199, 168, 90, 0.4);
+
+  transform-origin: top;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   TIMELINE ITEM
+========================================================= */
+
+.timelineItem {
+  position: relative;
+
+  min-height: 360px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 80px 1fr;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+.timelineYear {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(48px, 6vw, 90px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.07em;
+
+  color: #c7a85a;
+
+  opacity: 0.9;
+
+  will-change: transform, opacity;
+}
+
+
+/* LEFT */
+
+.timelineItem[data-side="left"] .timelineYear {
+  grid-column: 1;
+
+  text-align: right;
+
+  padding-right: 60px;
+}
+
+
+/* RIGHT */
+
+.timelineItem[data-side="right"] .timelineYear {
+  grid-column: 3;
+
+  text-align: left;
+
+  padding-left: 60px;
+}
+
+
+/* =========================================================
+   DOT
+========================================================= */
+
+.timelineDot {
+  position: relative;
+  z-index: 5;
+
+  grid-column: 2;
+  grid-row: 1;
+
+  justify-self: center;
+
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #c7a85a;
+
+  border-radius: 50%;
+
+  background: #12352b;
+}
+
+.timelineDot span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #c7a85a;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.timelineContent {
+  position: relative;
+
+  max-width: 420px;
+
+  padding: 30px 0;
+
+  will-change: transform, opacity;
+}
+
+
+/* LEFT */
+
+.timelineItem[data-side="left"] .timelineContent {
+  grid-column: 3;
+
+  padding-left: 60px;
+}
+
+
+/* RIGHT */
+
+.timelineItem[data-side="right"] .timelineContent {
+  grid-column: 1;
+  grid-row: 1;
+
+  padding-right: 60px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   ENTRY NUMBER
+========================================================= */
+
+.entryNumber {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(199, 168, 90, 0.65);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.timelineContent h2 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(25px, 3vw, 42px);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+
+  color: #f1eadb;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.timelineContent p {
+  margin: 22px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: rgba(241, 234, 219, 0.58);
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.timelineContent::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 60px;
+  height: 1px;
+
+  background: rgba(199, 168, 90, 0.3);
+}
+
+
+/* LEFT */
+
+.timelineItem[data-side="left"]
+.timelineContent::before {
+  left: 0;
+}
+
+
+/* RIGHT */
+
+.timelineItem[data-side="right"]
+.timelineContent::before {
+  right: 0;
+}
+
+
+/* =========================================================
+   CLOSING
+========================================================= */
+
+.closing {
+  position: relative;
+
+  width: min(1000px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 150px 0 220px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(199, 168, 90, 0.18);
+}
+
+
+/* =========================================================
+   CLOSING JAPANESE
+========================================================= */
+
+.closingJapanese {
+  margin-bottom: 35px;
+
+  font-family:
+    "Noto Serif JP",
+    serif;
+
+  font-size: 24px;
+
+  letter-spacing: 0.35em;
+
+  color: #c7a85a;
+}
+
+
+/* =========================================================
+   CLOSING TITLE
+========================================================= */
+
+.closing h2 {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(60px, 9vw, 130px);
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.075em;
+
+  color: #f1eadb;
+}
+
+
+/* =========================================================
+   CLOSING TEXT
+========================================================= */
+
+.closing p {
+  width: min(400px, 90%);
+
+  margin: 45px auto 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: rgba(241, 234, 219, 0.55);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .hero {
+    width: calc(100% - 80px);
+    padding-top: 120px;
+  }
+
+  .heroTitle {
+    font-size: clamp(80px, 15vw, 160px);
+  }
+
+  .heroDescription {
+    margin-left: 3%;
+    font-size: 13px;
+  }
+
+  .timeline {
+    width: calc(100% - 60px);
+  }
+
+  .timelineItem {
+    grid-template-columns: 1fr 60px 1fr;
+    min-height: 320px;
+  }
+
+  .timelineItem[data-side="left"] .timelineYear {
+    padding-right: 35px;
+  }
+
+  .timelineItem[data-side="right"] .timelineYear {
+    padding-left: 35px;
+  }
+
+  .timelineItem[data-side="left"] .timelineContent {
+    padding-left: 35px;
+  }
+
+  .timelineItem[data-side="right"] .timelineContent {
+    padding-right: 35px;
+  }
+
+  .timelineContent::before {
+    width: 35px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    width: calc(100% - 40px);
+
+    min-height: 90svh;
+
+    padding-top: 100px;
+  }
+
+  .heroEyebrow {
+    top: 80px;
+    font-size: 9px;
+  }
+
+  .heroJapanese {
+    top: 30%;
+    right: 3%;
+
+    font-size: 100px;
+  }
+
+  .heroTitle {
+    font-size: clamp(70px, 20vw, 115px);
+  }
+
+  .heroDescription {
+    width: min(300px, 85%);
+
+    margin: 35px 0 0;
+
+    font-size: 12px;
+  }
+
+  .heroMark {
+    bottom: 45px;
+  }
+
+
+  /* TIMELINE */
+
+  .timeline {
+    width: calc(100% - 40px);
+
+    padding: 70px 0 120px;
+  }
+
+  .timelineLine {
+    left: 15px;
+  }
+
+  .timelineItem {
+    min-height: 300px;
+
+    display: grid;
+
+    grid-template-columns: 30px 1fr;
+
+    align-items: start;
+  }
+
+  .timelineDot {
+    grid-column: 1;
+
+    width: 12px;
+    height: 12px;
+
+    margin-top: 8px;
+  }
+
+  .timelineDot span {
+    width: 4px;
+    height: 4px;
+  }
+
+
+  /* YEAR */
+
+  .timelineYear,
+  .timelineItem[data-side="left"] .timelineYear,
+  .timelineItem[data-side="right"] .timelineYear {
+    grid-column: 2;
+    grid-row: auto;
+
+    padding: 0;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+
+    font-size: 48px;
+  }
+
+
+  /* CONTENT */
+
+  .timelineContent,
+  .timelineItem[data-side="left"] .timelineContent,
+  .timelineItem[data-side="right"] .timelineContent {
+    grid-column: 2;
+    grid-row: auto;
+
+    padding: 0;
+
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .timelineContent::before {
+    display: none;
+  }
+
+  .entryNumber {
+    margin-bottom: 12px;
+    font-size: 9px;
+  }
+
+  .timelineContent h2 {
+    font-size: 25px;
+  }
+
+  .timelineContent p {
+    margin-top: 15px;
+    font-size: 11px;
+  }
+
+
+  /* CLOSING */
+
+  .closing {
+    width: calc(100% - 40px);
+
+    padding: 100px 0 150px;
+  }
+
+  .closingJapanese {
+    font-size: 19px;
+  }
+
+  .closing h2 {
+    font-size: clamp(48px, 15vw, 80px);
+  }
+
+  .closing p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .heroTitle {
+    font-size: 64px;
+  }
+
+  .heroDescription {
+    font-size: 11px;
+  }
+
+  .heroJapanese {
+    font-size: 80px;
+  }
+
+  .timelineYear,
+  .timelineItem[data-side="left"] .timelineYear,
+  .timelineItem[data-side="right"] .timelineYear {
+    font-size: 42px;
+  }
+
+  .timelineContent h2 {
+    font-size: 22px;
+  }
+
+  .timelineContent p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .heroTitle,
+  .heroDescription,
+  .heroEyebrow,
+  .timelineLine,
+  .timelineYear,
+  .timelineContent,
+  .timelineDot,
+  .closing {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

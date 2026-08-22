@@ -1,0 +1,560 @@
+/* =========================================================
+   KIHON SECTION
+========================================================= */
+
+.kihonSection {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 80px 140px;
+
+  overflow: hidden;
+
+  background: #eee7d9;
+  color: #080807;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   SECTION TOP
+========================================================= */
+
+.sectionTop {
+  position: relative;
+
+  width: min(1630px, 100%);
+
+  margin: 0 auto 100px;
+
+  display: flex;
+  align-items: baseline;
+
+  gap: 5px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+
+  color: rgba(8, 8, 7, 0.6);
+}
+
+.sectionTop span:first-child {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.kihonGrid {
+  width: min(1630px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: minmax(400px, 0.85fr) minmax(500px, 1.15fr);
+
+  gap: 120px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.sectionIntro {
+  position: relative;
+
+  padding-top: 25px;
+}
+
+
+/* =========================================================
+   JAPANESE
+========================================================= */
+
+.japanese {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+  font-size: clamp(20px, 1.8vw, 30px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.2em;
+
+  color: #8fa653;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.sectionIntro h2 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(90px, 12vw, 190px);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.085em;
+
+  text-transform: uppercase;
+
+  color: #080807;
+}
+
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.sectionIntro > p {
+  width: min(390px, 100%);
+
+  margin: 40px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(8, 8, 7, 0.62);
+}
+
+
+/* =========================================================
+   TECHNIQUE LIST
+========================================================= */
+
+.techniqueList {
+  position: relative;
+
+  width: 100%;
+
+  padding-top: 20px;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   KIHON ITEM
+========================================================= */
+
+.kihonItem {
+  position: relative;
+
+  min-height: 125px;
+
+  padding: 25px 0;
+
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 25px;
+
+  border-top: 1px solid rgba(8, 8, 7, 0.22);
+
+  will-change: transform, opacity;
+
+  transition:
+    padding-left 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.kihonItem:last-child {
+  border-bottom: 1px solid rgba(8, 8, 7, 0.22);
+}
+
+
+/* =========================================================
+   ITEM NUMBER
+========================================================= */
+
+.itemNumber {
+  padding-top: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.1em;
+
+  color: rgba(8, 8, 7, 0.42);
+}
+
+
+/* =========================================================
+   ITEM TITLE
+========================================================= */
+
+.kihonItem h3 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(22px, 2.2vw, 34px);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  text-transform: uppercase;
+
+  color: #080807;
+}
+
+
+/* =========================================================
+   ITEM DESCRIPTION
+========================================================= */
+
+.kihonItem p {
+  max-width: 470px;
+
+  margin: 12px 0 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  letter-spacing: -0.005em;
+
+  color: rgba(8, 8, 7, 0.55);
+}
+
+
+/* =========================================================
+   ITEM HOVER
+========================================================= */
+
+.kihonItem:hover {
+  padding-left: 10px;
+}
+
+.kihonItem:hover .itemNumber {
+  color: #8fa653;
+}
+
+.kihonItem:hover h3 {
+  color: #8fa653;
+}
+
+.kihonItem:hover p {
+  color: rgba(8, 8, 7, 0.75);
+}
+
+
+/* =========================================================
+   DECORATIVE CENTER LINE
+========================================================= */
+
+.kihonSection::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 1px;
+
+  background: rgba(8, 8, 7, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .kihonSection {
+    padding: 110px 60px 120px;
+  }
+
+  .sectionTop {
+    margin-bottom: 85px;
+  }
+
+  .kihonGrid {
+    gap: 80px;
+
+    grid-template-columns:
+      minmax(350px, 0.8fr)
+      minmax(450px, 1.2fr);
+  }
+
+  .sectionIntro h2 {
+    font-size: clamp(85px, 11vw, 170px);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .kihonSection {
+    padding: 90px 40px 100px;
+  }
+
+  .sectionTop {
+    margin-bottom: 70px;
+  }
+
+  .kihonGrid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+  }
+
+  .sectionIntro h2 {
+    font-size: clamp(70px, 11vw, 120px);
+  }
+
+  .sectionIntro > p {
+    max-width: 300px;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+  }
+
+  .kihonItem {
+    min-height: 110px;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 15px;
+
+    padding: 22px 0;
+  }
+
+  .kihonItem h3 {
+    font-size: 20px;
+  }
+
+  .kihonItem p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .kihonSection {
+    min-height: auto;
+
+    padding: 75px 20px 90px;
+  }
+
+  .sectionTop {
+    margin-bottom: 65px;
+
+    font-size: 10px;
+  }
+
+  .sectionTop span:first-child {
+    font-size: 9px;
+  }
+
+  .kihonGrid {
+    display: block;
+  }
+
+  .sectionIntro {
+    padding-top: 0;
+  }
+
+  .japanese {
+    margin-bottom: 20px;
+
+    font-size: 17px;
+  }
+
+  .sectionIntro h2 {
+    font-size: clamp(70px, 20vw, 110px);
+
+    line-height: 0.82;
+  }
+
+  .sectionIntro > p {
+    width: min(320px, 100%);
+
+    margin-top: 28px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .techniqueList {
+    margin-top: 65px;
+
+    padding-top: 0;
+  }
+
+  .kihonItem {
+    min-height: auto;
+
+    padding: 20px 0;
+
+    grid-template-columns: 32px 1fr;
+
+    gap: 10px;
+  }
+
+  .kihonItem h3 {
+    font-size: 16px;
+  }
+
+  .kihonItem p {
+    max-width: 300px;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+  .kihonSection::after {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .kihonSection {
+    padding: 65px 18px 75px;
+  }
+
+  .sectionTop {
+    margin-bottom: 55px;
+  }
+
+  .japanese {
+    font-size: 15px;
+  }
+
+  .sectionIntro h2 {
+    font-size: clamp(60px, 19vw, 85px);
+  }
+
+  .sectionIntro > p {
+    font-size: 11px;
+  }
+
+  .techniqueList {
+    margin-top: 55px;
+  }
+
+  .kihonItem {
+    padding: 17px 0;
+  }
+
+  .kihonItem h3 {
+    font-size: 14px;
+  }
+
+  .kihonItem p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kihonItem,
+  .techniqueList {
+    transition: none !important;
+
+    animation: none !important;
+
+    transform: none !important;
+  }
+}

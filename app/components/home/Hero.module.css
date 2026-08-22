@@ -9,17 +9,17 @@
 
   overflow: hidden;
 
-  background: var(--black);
+  background: #17221c;
 
-  color: var(--cream);
+  color: #f2efe5;
 }
 
 
 /* =========================================================
-   OUTER BACKGROUND
+   BACKGROUND
 ========================================================= */
 
-.outerBackground {
+.background {
   position: absolute;
 
   inset: 0;
@@ -27,20 +27,49 @@
   background:
     linear-gradient(
       90deg,
-      rgba(17, 20, 13, 0.88),
-      rgba(37, 42, 23, 0.42),
-      rgba(17, 20, 13, 0.9)
+      rgba(18, 31, 25, 0.96) 0%,
+      rgba(25, 42, 33, 0.82) 45%,
+      rgba(18, 30, 24, 0.91) 100%
     ),
     url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2200&q=90")
-    center / cover no-repeat;
-
-  transform: scale(1.06);
+      center / cover no-repeat;
 
   filter:
-    saturate(0.55)
+    saturate(0.35)
     contrast(0.95);
 
+  transform: scale(1.03);
+
   z-index: 0;
+}
+
+
+/* =========================================================
+   ARCHITECTURAL GRID
+========================================================= */
+
+.grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent calc(4.2vw - 1px),
+      rgba(235, 239, 225, 0.12) 4.2vw,
+      transparent calc(4.2vw + 1px)
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(95.8vw - 1px),
+      rgba(235, 239, 225, 0.12) 95.8vw,
+      transparent calc(95.8vw + 1px)
+    );
 }
 
 
@@ -51,155 +80,72 @@
 .frame {
   position: relative;
 
-  z-index: 1;
+  z-index: 2;
 
-  width: calc(100% - 9vw);
+  min-height: 100svh;
 
-  min-height:
-    calc(100svh - 8vw);
+  width: 100%;
 
-  margin: 4vw auto;
+  border-top:
+    1px solid rgba(239, 239, 226, 0.15);
 
-  background: var(--black);
+  border-bottom:
+    1px solid rgba(239, 239, 226, 0.12);
 
-  border:
-    1px solid rgba(217, 222, 194, 0.14);
-
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   TOP BAR
+   TOP INFORMATION
 ========================================================= */
 
-.topBar {
-  height: 62px;
+.topInfo {
+  position: absolute;
 
-  padding: 0 42px;
+  top: 28px;
 
-  border-bottom:
-    1px solid rgba(217, 222, 194, 0.18);
+  left: 4.2vw;
+  right: 4.2vw;
 
   display: flex;
 
-  align-items: center;
-
   justify-content: space-between;
-}
 
-
-.logo {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 14px;
-
-  letter-spacing: 0.02em;
-
-  color: var(--cream);
-}
-
-
-.established {
-  margin-left: auto;
-
-  margin-right: 80px;
+  align-items: center;
 
   font-size: 9px;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
 
-  color: var(--sage);
+  text-transform: uppercase;
+
+  color: rgba(239, 239, 226, 0.65);
+}
+
+
+.location {
+  color: #c7b15b;
+}
+
+
+.year {
+  color: rgba(239, 239, 226, 0.55);
 }
 
 
 /* =========================================================
-   MENU
+   LEFT LABEL
 ========================================================= */
 
-.menu {
-  width: 28px;
-
-  height: 28px;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  gap: 5px;
-
-  cursor: pointer;
-}
-
-
-.menu span {
-  display: block;
-
-  width: 20px;
-
-  height: 1px;
-
-  background: var(--cream);
-
-  transition:
-    width 0.3s ease,
-    background 0.3s ease;
-}
-
-
-.menu:hover span:first-child {
-  width: 14px;
-
-  background: var(--sap-green);
-}
-
-
-.menu:hover span:last-child {
-  width: 20px;
-
-  background: var(--sap-green);
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.content {
-  position: relative;
-
-  min-height:
-    calc(100svh - 125px);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-}
-
-
-/* =========================================================
-   LEFT INFORMATION
-========================================================= */
-
-.leftInfo {
+.leftLabel {
   position: absolute;
 
-  top: 70px;
+  left: 7.3vw;
 
-  left: 50px;
+  top: 28%;
+
+  z-index: 4;
 
   display: flex;
 
@@ -207,57 +153,113 @@
 
   gap: 14px;
 
-  z-index: 2;
-}
-
-
-.japanese {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(35px, 4vw, 60px);
-
-  line-height: 1;
-
-  color: var(--light-sage);
-}
-
-
-.label {
   font-size: 8px;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
 
-  color: var(--sap-green);
+  text-transform: uppercase;
+
+  color: rgba(239, 239, 226, 0.75);
+}
+
+
+.leftLabel span:first-child {
+  color: #c7b15b;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 13px;
+
+  letter-spacing: 0;
 }
 
 
 /* =========================================================
-   HERO IMAGE
+   JAPANESE TITLE
+========================================================= */
+
+.japanese {
+  position: absolute;
+
+  left: 7vw;
+
+  top: 34%;
+
+  z-index: 4;
+
+  font-family:
+    "Noto Serif JP",
+    "Yu Mincho",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(70px, 8vw, 125px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  color: #f1eee4;
+
+  writing-mode: vertical-rl;
+
+  opacity: 0.92;
+}
+
+
+/* =========================================================
+   IMAGE
 ========================================================= */
 
 .imageWrapper {
-  position: relative;
+  position: absolute;
 
-  width: min(42vw, 570px);
+  top: 23%;
 
-  height: min(62vh, 650px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(58vw, 850px);
+
+  height: min(58vh, 590px);
 
   overflow: hidden;
 
   opacity: 0;
 
   border:
-    1px solid rgba(217, 222, 194, 0.12);
+    1px solid rgba(239, 239, 226, 0.18);
 }
 
 
-.imageWrapper::after {
-  content: "";
+.image {
+  object-fit: cover;
 
+  filter:
+    saturate(0.62)
+    contrast(1.02);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+
+.imageWrapper:hover .image {
+  transform: scale(1.045);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.imageOverlay {
   position: absolute;
 
   inset: 0;
@@ -267,30 +269,9 @@
   background:
     linear-gradient(
       180deg,
-      rgba(17, 20, 13, 0.05),
-      rgba(17, 20, 13, 0.3)
+      rgba(23, 34, 28, 0.05),
+      rgba(23, 34, 28, 0.28)
     );
-
-  mix-blend-mode: multiply;
-}
-
-
-.image {
-  object-fit: cover;
-
-  filter:
-    saturate(0.55)
-    contrast(1.05);
-
-  transform: scale(1.01);
-
-  transition:
-    transform 1.2s ease;
-}
-
-
-.imageWrapper:hover .image {
-  transform: scale(1.04);
 }
 
 
@@ -301,39 +282,54 @@
 .counter {
   position: absolute;
 
-  top: 70px;
+  top: 25%;
 
-  right: 50px;
+  right: 8vw;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 25px;
+  font-size: 26px;
 
-  color: var(--light-sage);
+  color: #f0ede2;
+
+  letter-spacing: 0.03em;
 }
 
 
 /* =========================================================
-   TITLE
+   MAIN TITLE
 ========================================================= */
 
 .title {
   position: absolute;
 
-  left: 50%;
+  z-index: 5;
 
-  bottom: 55px;
+  left: calc(50% + 11vw);
 
-  width: min(42vw, 570px);
+  top: 61%;
 
-  transform: translateX(-50%);
+  width: 500px;
 
   opacity: 0;
+}
 
-  z-index: 3;
+
+.titleSmall {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.22em;
+
+  color: #c7b15b;
+
+  text-transform: uppercase;
 }
 
 
@@ -346,93 +342,111 @@
     serif;
 
   font-size:
-    clamp(38px, 4vw, 65px);
+    clamp(65px, 7vw, 105px);
 
   font-weight: 400;
 
-  line-height: 0.88;
+  line-height: 0.78;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -0.065em;
 
-  color: var(--cream);
-}
-
-
-.title h1::first-line {
-  color: var(--light-sage);
+  color: #f4f0e5;
 }
 
 
 .title p {
-  margin-top: 18px;
+  margin-top: 25px;
 
   font-size: 9px;
 
-  line-height: 1.5;
+  line-height: 1.6;
 
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
 
-  color:
-    rgba(217, 222, 194, 0.55);
+  color: rgba(239, 239, 226, 0.58);
 }
 
 
 /* =========================================================
-   BOTTOM BAR
+   BOTTOM INFORMATION
 ========================================================= */
 
-.bottomBar {
+.bottomInfo {
   position: absolute;
 
-  left: 42px;
+  left: 7.3vw;
 
-  right: 42px;
+  right: 7.3vw;
 
-  bottom: 25px;
+  bottom: 30px;
 
   display: flex;
+
+  align-items: flex-end;
 
   justify-content: space-between;
 
-  align-items: center;
+  z-index: 5;
 
-  font-size: 8px;
+  font-size: 9px;
 
-  letter-spacing: 0.13em;
+  letter-spacing: 0.16em;
 
-  color: var(--sage);
+  text-transform: uppercase;
+
+  color: rgba(239, 239, 226, 0.8);
 }
 
 
-.scroll {
+.bottomInfo > div {
   display: flex;
 
-  align-items: center;
+  flex-direction: column;
 
-  gap: 12px;
+  gap: 8px;
+}
 
-  color: var(--cream);
+
+.bottomLabel {
+  font-size: 7px;
+
+  letter-spacing: 0.22em;
+
+  color: #c7b15b;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll {
+  align-items: center !important;
+
+  gap: 14px !important;
+
+  color: #f1eee4;
 }
 
 
 .scrollLine {
-  width: 50px;
+  width: 70px;
 
   height: 1px;
 
-  background: var(--sap-green);
+  background: #c7b15b;
 
   transform-origin: left;
 
   animation:
-    scrollLine 2s ease-in-out infinite;
+    scrollLine 2.5s ease-in-out infinite;
 }
 
 
 @keyframes scrollLine {
 
   0% {
-    transform: scaleX(0.35);
+    transform: scaleX(0.3);
   }
 
   50% {
@@ -440,42 +454,9 @@
   }
 
   100% {
-    transform: scaleX(0.35);
+    transform: scaleX(0.3);
   }
 
-}
-
-
-/* =========================================================
-   DESKTOP ACCENT
-========================================================= */
-
-.frame::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-
-  left: 0;
-
-  width: 3px;
-
-  height: 100%;
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      var(--sap-green),
-      transparent
-    );
-
-  opacity: 0.6;
-
-  z-index: 5;
-
-  pointer-events: none;
 }
 
 
@@ -485,115 +466,92 @@
 
 @media (max-width: 768px) {
 
-  .hero {
-    min-height: 100svh;
+  .topInfo {
+    top: 22px;
+
+    left: 22px;
+    right: 22px;
   }
 
 
-  .frame {
-    width:
-      calc(100% - 24px);
+  .leftLabel {
+    left: 25px;
 
-    min-height:
-      calc(100svh - 24px);
-
-    margin: 12px auto;
-  }
-
-
-  .topBar {
-    height: 56px;
-
-    padding: 0 20px;
-  }
-
-
-  .logo {
-    font-size: 12px;
-  }
-
-
-  .established {
-    margin-right: 25px;
-
-    font-size: 8px;
-  }
-
-
-  .content {
-    min-height:
-      calc(100svh - 105px);
-  }
-
-
-  .leftInfo {
-    left: 20px;
-
-    top: 35px;
-
-    gap: 10px;
+    top: 23%;
   }
 
 
   .japanese {
-    font-size: 34px;
+    left: 24px;
+
+    top: 31%;
+
+    font-size: 70px;
   }
 
 
-  .label {
-    font-size: 7px;
+  .imageWrapper {
+    top: 27%;
+
+    width: 82vw;
+
+    height: 48vh;
   }
 
 
   .counter {
-    right: 20px;
+    top: 22%;
 
-    top: 35px;
+    right: 25px;
 
     font-size: 20px;
   }
 
 
-  .imageWrapper {
-    width: 78vw;
-
-    height: 58vh;
-  }
-
-
   .title {
-    width: 78vw;
+    left: 13vw;
 
-    bottom: 70px;
+    top: 65%;
+
+    width: 80vw;
   }
 
 
   .title h1 {
-    font-size: 12vw;
+    font-size: 16vw;
+  }
+
+
+  .titleSmall {
+    font-size: 7px;
   }
 
 
   .title p {
     font-size: 7px;
+
+    margin-top: 17px;
   }
 
 
-  .bottomBar {
-    left: 20px;
+  .bottomInfo {
+    left: 25px;
+    right: 25px;
 
-    right: 20px;
-
-    bottom: 18px;
+    bottom: 23px;
   }
 
 
-  .bottomBar > span {
+  .bottomInfo > div:last-child {
     display: none;
   }
 
 
   .scroll {
-    margin: auto;
-  }
+    position: absolute;
 
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
 }
